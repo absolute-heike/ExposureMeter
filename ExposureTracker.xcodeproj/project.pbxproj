@@ -13,6 +13,7 @@
 		727FFEA51FEFE8BE00BAE86E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727FFEA41FEFE8BE00BAE86E /* Assets.xcassets */; };
 		727FFEA81FEFE8BE00BAE86E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727FFEA61FEFE8BE00BAE86E /* LaunchScreen.storyboard */; };
 		727FFEB31FEFE8BF00BAE86E /* ExposureTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEB21FEFE8BF00BAE86E /* ExposureTrackerTests.swift */; };
+		727FFEBF1FF103FA00BAE86E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		727FFEAE1FEFE8BF00BAE86E /* ExposureTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExposureTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727FFEB21FEFE8BF00BAE86E /* ExposureTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureTrackerTests.swift; sourceTree = "<group>"; };
 		727FFEB41FEFE8BF00BAE86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727FFEBF1FF103FA00BAE86E /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 				727FFE9C1FEFE8BE00BAE86E /* ExposureTracker */,
 				727FFEB11FEFE8BF00BAE86E /* ExposureTrackerTests */,
 				727FFE9B1FEFE8BE00BAE86E /* Products */,
+				727FFEBD1FF103FA00BAE86E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +98,14 @@
 				727FFEB41FEFE8BF00BAE86E /* Info.plist */,
 			);
 			path = ExposureTrackerTests;
+			sourceTree = "<group>";
+		};
+		727FFEBD1FF103FA00BAE86E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
