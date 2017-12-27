@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet private weak var recordButton: UIButton!
+    @IBOutlet private weak var recordButton: RecordButton!
     
     let tracker = ExposureTracker()
     
@@ -33,12 +33,12 @@ extension ViewController {
     
     @IBAction func tappedRecordButton(_ sender: Any) {
         
-        let recordSamples = true
-        
-        if recordSamples {
-//            self.samples.removeAll()
+        if self.tracker.record {
+            let samples = self.tracker.stopTracking()
+            self.recordButton.set(status: .record, animated: true)
+        } else {
+            self.recordButton.set(status: .stop, animated: true)
+            self.tracker.startTracking()
         }
-        
-        self.recordButton.layer.cornerRadius = recordSamples ? 0.0 : (self.recordButton.frame.size.width * 0.5)
     }
 }
