@@ -14,6 +14,7 @@
 		727FFEA81FEFE8BE00BAE86E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 727FFEA61FEFE8BE00BAE86E /* LaunchScreen.storyboard */; };
 		727FFEB31FEFE8BF00BAE86E /* ExposureTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEB21FEFE8BF00BAE86E /* ExposureTrackerTests.swift */; };
 		727FFEBF1FF103FA00BAE86E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */; };
+		727FFEC11FF3CABA00BAE86E /* ExposureTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		727FFEB21FEFE8BF00BAE86E /* ExposureTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureTrackerTests.swift; sourceTree = "<group>"; };
 		727FFEB41FEFE8BF00BAE86E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureTracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				727FFE9D1FEFE8BE00BAE86E /* AppDelegate.swift */,
 				727FFE9F1FEFE8BE00BAE86E /* ViewController.swift */,
+				727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */,
 				727FFEA11FEFE8BE00BAE86E /* Main.storyboard */,
 				727FFEA41FEFE8BE00BAE86E /* Assets.xcassets */,
 				727FFEA61FEFE8BE00BAE86E /* LaunchScreen.storyboard */,
@@ -213,6 +216,7 @@
 			files = (
 				727FFEA01FEFE8BE00BAE86E /* ViewController.swift in Sources */,
 				727FFE9E1FEFE8BE00BAE86E /* AppDelegate.swift in Sources */,
+				727FFEC11FF3CABA00BAE86E /* ExposureTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
