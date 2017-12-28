@@ -16,6 +16,7 @@
 		727FFEBF1FF103FA00BAE86E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */; };
 		727FFEC11FF3CABA00BAE86E /* ExposureTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */; };
 		727FFEC31FF3D3CF00BAE86E /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEC21FF3D3CF00BAE86E /* RecordButton.swift */; };
+		727FFEC51FF3D89500BAE86E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727FFEC41FF3D89500BAE86E /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		727FFEBE1FF103FA00BAE86E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureTracker.swift; sourceTree = "<group>"; };
 		727FFEC21FF3D3CF00BAE86E /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
+		727FFEC41FF3D89500BAE86E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			children = (
 				727FFE9D1FEFE8BE00BAE86E /* AppDelegate.swift */,
 				727FFE9F1FEFE8BE00BAE86E /* ViewController.swift */,
+				727FFEC41FF3D89500BAE86E /* ResultsViewController.swift */,
 				727FFEC01FF3CABA00BAE86E /* ExposureTracker.swift */,
 				727FFEC21FF3D3CF00BAE86E /* RecordButton.swift */,
 				727FFEA11FEFE8BE00BAE86E /* Main.storyboard */,
@@ -220,6 +223,7 @@
 				727FFEC31FF3D3CF00BAE86E /* RecordButton.swift in Sources */,
 				727FFEA01FEFE8BE00BAE86E /* ViewController.swift in Sources */,
 				727FFE9E1FEFE8BE00BAE86E /* AppDelegate.swift in Sources */,
+				727FFEC51FF3D89500BAE86E /* ResultsViewController.swift in Sources */,
 				727FFEC11FF3CABA00BAE86E /* ExposureTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

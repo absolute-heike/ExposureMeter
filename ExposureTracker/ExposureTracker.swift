@@ -11,32 +11,32 @@ import AVFoundation
 
 struct RawSample {
     let brightness: Float
-    let timeInterval: Double
-    
-    init(exifBrightness: Float, timeInterval: Double) {
-        // normalize brightness
-        self.brightness = exifBrightness + 3.50876 // - 3.50876 is the absolute darkest exif-brightness, measured on an iPhone X
-        self.timeInterval = timeInterval
-    }
+    let timestamp: Double
 }
 
 struct ExposureSample {
     
     let startSample: RawSample
     let endSample: RawSample
+    
+    var duration: TimeInterval {
+        return endSample.timestamp - startSample.timestamp
+    }
 }
 
 class ExposureTracker: NSObject {
     
     private var camera: AVCaptureDevice?
     
-    private var rawSamples = [RawSample]()
+    private(set) var rawSamples = [RawSample]()
     private var exposureSamples = [ExposureSample]()
     private(set) var record = false
     
     private var lastOnSample: RawSample?
     
     private(set) var previewLayer: CALayer?
+    
+    private(set) var frameRate: Double = 0.0
     
     override init() {
         super.init()
@@ -54,7 +54,7 @@ class ExposureTracker: NSObject {
         let session = AVCaptureSession()
         session.addInput(input)
         
-        camera.configureForHighestFrameRate()
+        self.frameRate = camera.configureForHighestFrameRate()
         
         let preview = AVCaptureVideoPreviewLayer(session: session)
         preview.videoGravity = .resizeAspectFill
@@ -94,7 +94,7 @@ extension ExposureTracker: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         // frame was generated
         let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-        let sample = RawSample(exifBrightness: sampleBuffer.brightness, timeInterval: timestamp.seconds)
+        let sample = RawSample(brightness: sampleBuffer.brightness, timestamp: timestamp.seconds)
         
         guard let lastSample = self.rawSamples.last else {
             self.rawSamples.append(sample)
@@ -121,7 +121,7 @@ private extension CMSampleBuffer {
             let metadataDict = CMCopyDictionaryOfAttachments(nil, self, kCMAttachmentMode_ShouldPropagate) as? [String: Any],
             let exifMetadata = metadataDict[String(kCGImagePropertyExifDictionary)] as? [String: Any],
             let brightnessValue = exifMetadata[String(kCGImagePropertyExifBrightnessValue)] as? Float
-            else { return 0.0 }
+        else { return 0.0 }
         
         return brightnessValue
     }
@@ -129,10 +129,11 @@ private extension CMSampleBuffer {
 
 private extension AVCaptureDevice {
     
-    func configureForHighestFrameRate() {
+    func configureForHighestFrameRate() -> Double {
         
         var bestFormat: Format?
         var bestRange: AVFrameRateRange?
+        var frameRate: Double = 0.0
         
         for format in self.formats {
             for range in format.videoSupportedFrameRateRanges {
@@ -140,6 +141,7 @@ private extension AVCaptureDevice {
                 if range.maxFrameRate >= (bestRange?.maxFrameRate ?? 0.0) {
                     bestFormat = format
                     bestRange = range
+                    frameRate = range.maxFrameRate
                 }
             }
         }
@@ -147,7 +149,7 @@ private extension AVCaptureDevice {
         guard
             let format = bestFormat,
             let range = bestRange
-            else { return }
+        else { return frameRate }
         
         do {
             try self.lockForConfiguration()
@@ -160,5 +162,7 @@ private extension AVCaptureDevice {
         } catch {
             assertionFailure("could not set the highest supported framerate")
         }
+        
+        return frameRate
     }
 }
