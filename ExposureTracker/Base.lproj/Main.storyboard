@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mzU-nl-fvJ">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,82 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ExposureTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rk-6Z-I0M">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="fEx-Xd-qJj">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0B-ph-MRj">
+                                            <rect key="frame" x="0.0" y="104" width="375" height="572"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UK2-bO-ehV">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="572"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pW1-JX-chg">
+                                                        <rect key="frame" x="16" y="0.0" width="343" height="572"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="1. Place your phone with the back camera towards the light source  2. Reduce ambient light  3. Press the ">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="record">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" button  4. Start exposure series on microscope  5. Press ">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content="stop">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                                                    <font key="NSOriginalFont" size="17" name="HelveticaNeue-MediumItalic"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                            <fragment content=" to see results">
+                                                                <attributes>
+                                                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <font key="NSFont" size="17" name="HelveticaNeue-Medium"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </view>
+                                            <constraints>
+                                                <constraint firstItem="pW1-JX-chg" firstAttribute="height" secondItem="X0B-ph-MRj" secondAttribute="height" id="UTV-zK-zxE"/>
+                                                <constraint firstItem="pW1-JX-chg" firstAttribute="centerY" secondItem="X0B-ph-MRj" secondAttribute="centerY" id="ldh-eL-xOh"/>
+                                            </constraints>
+                                            <vibrancyEffect>
+                                                <blurEffect style="dark"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qP2-3N-mwn" userLabel="recordButton" customClass="RecordButton" customModule="ExposureTracker" customModuleProvider="target">
-                                <rect key="frame" x="158" y="547" width="60" height="60"/>
+                                <rect key="frame" x="157.66666666666666" y="692" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.38228475188660549" blue="0.35196026412070291" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="rqR-s1-4Ka"/>
@@ -32,13 +103,20 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qP2-3N-mwn" secondAttribute="bottom" constant="60" id="ojG-ca-YXE"/>
-                            <constraint firstItem="qP2-3N-mwn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="x9G-Pw-EGe"/>
+                            <constraint firstItem="X0B-ph-MRj" firstAttribute="leading" secondItem="jfn-PL-At0" secondAttribute="leading" id="9pq-cd-xyz"/>
+                            <constraint firstItem="qP2-3N-mwn" firstAttribute="top" secondItem="X0B-ph-MRj" secondAttribute="bottom" constant="16" id="GsN-N3-z4F"/>
+                            <constraint firstItem="jfn-PL-At0" firstAttribute="trailing" secondItem="X0B-ph-MRj" secondAttribute="trailing" id="RSh-jX-7G6"/>
+                            <constraint firstItem="jfn-PL-At0" firstAttribute="trailing" secondItem="pW1-JX-chg" secondAttribute="trailing" constant="16" id="WJD-yh-6tJ"/>
+                            <constraint firstItem="jfn-PL-At0" firstAttribute="top" secondItem="X0B-ph-MRj" secondAttribute="top" constant="-16" id="knz-nu-T0X"/>
+                            <constraint firstItem="jfn-PL-At0" firstAttribute="bottom" secondItem="qP2-3N-mwn" secondAttribute="bottom" constant="26" id="ojG-ca-YXE"/>
+                            <constraint firstItem="pW1-JX-chg" firstAttribute="leading" secondItem="jfn-PL-At0" secondAttribute="leading" constant="16" id="s9b-UU-xlQ"/>
+                            <constraint firstItem="qP2-3N-mwn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="x9G-Pw-EGe"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="jfn-PL-At0"/>
                     </view>
                     <navigationItem key="navigationItem" id="FtC-BZ-grL"/>
                     <connections>
+                        <outlet property="explanationView" destination="5rk-6Z-I0M" id="dlJ-4A-idY"/>
                         <outlet property="recordButton" destination="qP2-3N-mwn" id="uBF-Xx-ikI"/>
                     </connections>
                 </viewController>
@@ -52,7 +130,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mzU-nl-fvJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wzf-gl-ohT">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

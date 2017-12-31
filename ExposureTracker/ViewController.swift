@@ -12,6 +12,7 @@ import AVFoundation
 class ViewController: UIViewController {
     
     @IBOutlet private weak var recordButton: RecordButton!
+    @IBOutlet private weak var explanationView: UIVisualEffectView!
     
     let tracker = ExposureTracker()
     
@@ -48,9 +49,15 @@ extension ViewController {
             controller.frameRate = self.tracker.frameRate
             controller.setup(from: samples, rawSamples: self.tracker.rawSamples)
             self.navigationController?.pushViewController(controller, animated: true)
+            
+            self.explanationView.isHidden = false
         } else {
             self.recordButton.set(status: .stop, animated: true)
             self.tracker.startTracking()
+            
+            self.explanationView.isHidden = true
         }
+        
+        UIView.transition(with: self.explanationView, duration: 0.3, options: [.transitionCrossDissolve, .allowUserInteraction], animations: nil, completion: nil)
     }
 }
