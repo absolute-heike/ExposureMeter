@@ -38,6 +38,8 @@ class ExposureTracker: NSObject {
     
     private(set) var frameRate: Double = 0.0
     
+    private var sessionStartTime: CFTimeInterval = 0.0
+    
     override init() {
         super.init()
         
@@ -72,6 +74,8 @@ class ExposureTracker: NSObject {
 extension ExposureTracker {
     
     func startTracking() {
+        self.sessionStartTime = CACurrentMediaTime() - 1.0 // timestamp to normalize the values
+        
         self.lastOnSample = nil
         self.rawSamples.removeAll()
         self.exposureSamples.removeAll()
@@ -94,7 +98,7 @@ extension ExposureTracker: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         // frame was generated
         let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
-        let sample = RawSample(brightness: sampleBuffer.brightness, timestamp: timestamp.seconds)
+        let sample = RawSample(brightness: sampleBuffer.brightness, timestamp: timestamp.seconds - self.sessionStartTime)
         
         guard let lastSample = self.rawSamples.last else {
             self.rawSamples.append(sample)
